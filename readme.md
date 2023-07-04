@@ -1,5 +1,3 @@
-![katana](https://raw.githubusercontent.com/jabedzaman/dotfiles/main/.wallpapers/katana.jpg)
-
 # dotfiles - my personal dotfiles
 
 ### Requirements
