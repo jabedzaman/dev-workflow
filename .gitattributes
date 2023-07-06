@@ -1,3 +1,3 @@
-.icons/* diff=binary
+.icons/* diff=shellscript
 .config/awesome/* diff=shellscript
-.themes/* diff=vim
+.themes/* diff=sheelscript
