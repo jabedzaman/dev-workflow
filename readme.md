@@ -1,6 +1,6 @@
 # dotfiles go brrr
 
-these are the dot files for my current setup. i am a nerf ![arch linux](https://archlinux.org) user along with awesomewm. i dont have much configuration, to keep my setup fast and minimal. i occasionally keep updating my dotfiles to get the best dev workflow and keep my system **blazingly fast!!!** 
+these are the dot files for my current setup. i am a nerf (arch linux)[https://archlinux.org] user along with awesomewm. i dont have much configuration, to keep my setup fast and minimal. i occasionally keep updating my dotfiles to get the best dev workflow and keep my system **blazingly fast!!!** 
 
 the main things i use are:
 
