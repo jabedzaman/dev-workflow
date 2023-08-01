@@ -1,8 +1,8 @@
-# dotfiles go brrr
+# Dotfiles go brrr
 
-these are the dot files for my current setup. i am a nerf [arch linux](https://archlinux.org) user along with awesomewm. i dont have much configuration, to keep my setup fast and minimal. i occasionally keep updating my dotfiles to get the best dev workflow and keep my system **blazingly fast!!!** 
+These are the dot files for my current setup. I am a nerf [arch linux](https://archlinux.org) user along with awesomewm. I dont have much configuration, to keep my setup fast and minimal. I occasionally keep updating my dotfiles to get the best dev workflow and keep my system **blazingly fast!!!** 
 
-the main things i use are:
+The main things i use are:
 
 - the chad [arch](https://archlinux.org) ovio.
 - [awesomewm](https://awesomewm.org) as my tiling window manager.
@@ -13,8 +13,8 @@ the main things i use are:
 - and the [zsh](https://zsh.org) as my shell.
 
 
-## my setup
+## My Setup
 
-currently, i use a dell inspiron with intel i51135g7(4-core)cpu with 16gib of ram. 
+Currently, I use a dell inspiron with intel i51135G7(4-core)CPU with 16GiB of RAM. 
 
 ![pon](./assets/xense.png)
