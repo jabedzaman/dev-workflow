@@ -10,7 +10,7 @@ the main things i use are:
 - [nemo](https://github.com/linuxmint/nemo) as my file manager.
 - [rofi](https://github.com/davatorium/rofi) as a replacement for dmenu.
 - [alacritty](https://github.com/alacritty/alacritty) along with [tmux](https://github.com/tmux/tmux).
-- and the ![zsh](https://zsh.org) as my shell.
+- and the [zsh](https://zsh.org) as my shell.
 
 
 ## my setup
