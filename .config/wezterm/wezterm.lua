@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local config = {}
 
-config.color_scheme = 'Catppuccin Mocha'
+config.font = wezterm.font("Dank Mono Italic", {weight="Regular"})
 
 return {
     color_scheme = "Dracula (Official)",
