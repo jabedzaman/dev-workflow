@@ -9,12 +9,13 @@ The main things i use are:
 - [neovim](https://neovim.io) as my editor.
 - [nemo](https://github.com/linuxmint/nemo) as my file manager.
 - [rofi](https://github.com/davatorium/rofi) as a replacement for dmenu.
-- [alacritty](https://github.com/alacritty/alacritty) along with [tmux](https://github.com/tmux/tmux).
+- [wezterm](https://github.com/wezterm) along with [tmux](https://github.com/tmux/tmux).
 - and the [zsh](https://zsh.org) as my shell.
+- [zap](https://github.com/zap) for my prompt, autocomplitions, etc
 
 
 ## My Setup
 
-Currently, I use a dell inspiron with intel i51135G7(4-core)CPU with 16GiB of RAM. 
+Currently, I use a intel i51135G7(4-core)CPU with 16GiB of RAM. 
 
 ![pon](./assets/xense.png)
