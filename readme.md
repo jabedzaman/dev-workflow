@@ -18,4 +18,4 @@ The main things i use are:
 
 Currently, I use a intel i51135G7(4-core)CPU with 16GiB of RAM. 
 
-![pon](./assets/xense.png)
+![pon](./assets/rice.png)
