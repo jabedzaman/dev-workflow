@@ -1,0 +1,3 @@
+[submodule ".config/awesome/--force"]
+	path = .config/awesome/--force
+	url = https://github.com/lcpz/lain

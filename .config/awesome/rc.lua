@@ -17,7 +17,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local lain = require("lain")
 
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
-local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 
 require("awful.hotkeys_popup.keys")
 require("awful.autofocus")
@@ -48,7 +47,23 @@ end
 -- {{{ Variable definitions
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.useless_gap = 5
-beautiful.border_width = 2
+beautiful.border_width = 3
+beautiful.font          = "Dank Mono Italic Bold 11"
+
+beautiful.bg_normal     = "#222222C1"
+beautiful.bg_focus      = "#2222227A"
+beautiful.bg_urgent     = "#05ff0000"
+beautiful.bg_minimize   = beautiful.bg_normal
+beautiful.bg_systray    = beautiful.bg_normal
+
+beautiful.fg_normal     = "#ffffff"
+beautiful.fg_focus      = "#ffffff"
+beautiful.fg_urgent     = "#ffffff"
+beautiful.fg_minimize   = "#ffffff"
+beautiful.border_normal = "#6272a4"
+beautiful.border_focus  = "#bd93f9"
+beautiful.border_marked = "#91231c"
+
 
 local modkey = "Mod4"
 local terminal = "wezterm"
@@ -72,11 +87,26 @@ local cpu = lain.widget.cpu {
     end
 }
 
+local mypartition =  lain.widget.fs({
+    settings  = function()
+        widget:set_text(": " ..  fs_now["/home"].percentage .. "%")
+    end
+})
+
+local mynet = lain.widget.net({
+    settings = function()
+        widget:set_markup(" " .. net_now.received .. "KB/s")
+    end
+})
+
 local mymem = lain.widget.mem({
     settings = function()
         widget:set_markup(" " .. mem_now.used  .. "MB")
     end
 })
+
+local archSwag = wibox.widget.textbox(" ")
+
 Mycal = lain.widget.cal(
   {
     attach_to = { clock_widget },
@@ -113,7 +143,7 @@ local taglist_buttons = gears.table.join(
 
 
 local function set_wallpaper()
-  os.execute('feh --bg-fill --randomize ~/.wallpapers')
+  os.execute('nitrogen --restore')
 end
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -143,28 +173,23 @@ awful.screen.connect_for_each_screen(function(s)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
+      space,
+      archSwag,
+      -- space,
       s.mytaglist,
-      s.mypromRptbox,
     },
     {
       layout = wibox.layout.fixed.horizontal,
-      --  spotify_widget({
-      --   font = "FiraCode Nerd Font 10",
-      --   play_icon = "/usr/share/icons/Papirus/24x24/panel/spotify-indicator.svg",
-      --   pause_icon = "/usr/share/icons/Papirus/24x24/panel/spotify-indicator-paused.svg",
-      --   dim_when_paused = true,
-      --   dim_opacity = 0.5,
-      --   max_length = 25,
-      --   show_tooltip = true,
-      --   tooltip_font = "FiraCode Nerd Font 10",
-      --   widget_icon_margin = { left = 5, right = 5 },
-      --   widget_text_margin = { left = 5, right = 5 },
-      -- }),
     },
     {
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
+      space,
+      mynet.widget,
+      space,
       cpu.widget,
+      space,
+      mypartition.widget,
       space,
       mymem.widget,
       space,
@@ -279,7 +304,7 @@ local globalkeys = gears.table.join(
   awful.key({}, "Print", function() awful.util.spawn("flameshot gui") end,
     { description = "Take a screenshot with FlameShot", group = "Screenshots" }),
   awful.key({ modkey }, "y", function() awful.util.spawn("betterlockscreen -l", false) end),
-  awful.key({ modkey }, "a", function() os.execute("feh --bg-fill --randomize ~/.wallpapers") end)
+  awful.key({ modkey }, "a", function() os.execute("nitrogen  --set-zoom-fill --random ~/.wallpapers --save") end)
 )
 
 local clientkeys = gears.table.join(
@@ -321,7 +346,24 @@ local clientkeys = gears.table.join(
       c.maximized_horizontal = not c.maximized_horizontal
       c:raise()
     end,
-    { description = "(un)maximize horizontally", group = "client" })
+    { description = "(un)maximize horizontally", group = "client" }),
+    awful.button({ }, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+    end),
+    awful.button({ modkey }, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        awful.mouse.client.move(c)
+    end),
+    -- modkey + Right Click drag to resize
+    awful.button({ modkey }, 3, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        awful.mouse.client.resize(c)
+    end),
+    -- modkey + Alt + Left Click drag to resize
+    awful.button({ modkey, "Mod1" }, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        awful.mouse.client.resize(c)
+    end)
 )
 
 -- Bind all key numbers to tags.
