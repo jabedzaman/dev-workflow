@@ -1,0 +1,20 @@
+{
+    "theme": "macOS Classic Dark2",
+    "ui_font_size": 16,
+    "cursor_blink": true,
+    "terminal": {
+        "font_size": 12,
+        "font_family": "JetBrainsMonoNL Nerd Font",
+    },
+    "buffer_font_size": 16,
+    "buffer_font_family": "Dank Mono",
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000
+        }
+    },
+    "centered_layout": {
+        "enabled": true
+    },
+    "ui_font_family": "JetBrainsMonoNL Nerd Font"
+}
