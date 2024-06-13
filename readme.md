@@ -34,8 +34,6 @@ My MacOS setup:
 
 ---
 
-In those halcyon days, my sanctuary was a labyrinth of configurations and customizations, meticulously crafted to fuel my quest for digital mastery. At the heart of it all stood my Linux fortress, fortified with the might of Arch Linux and adorned with the regal crown of awesomewm, a tiling window manager par excellence.
-
 These were the tools I used prevoiusly on my DELL Inspiron 15 series laptop with an Intel i5-1135G7 CPU and 16GB of RAM:
 
 - the chad [arch](https://archlinux.org) ovio.
